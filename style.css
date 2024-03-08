@@ -1,0 +1,127 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+
+    overflow: hidden;
+    background: rgb(255,0,137);
+    background-color: black;
+    font-family: monospace;
+    font-size: 16px;
+}
+  
+.container {
+    margin: 0 ;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+  }
+  
+
+
+#coracao-btn {
+    font-size: 200px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    outline: none;
+  }
+  
+#pagina-secreta {
+    display: none;
+    
+  }
+  
+.escondido {
+    display: none;
+
+  }
+
+.cascade-digit {
+    position: absolute;
+    top: -30px;
+    left: calc(50% - 50px);
+    animation: fall 1s linear infinite;
+}
+h1{
+    color: #fff;
+}
+
+.rodape p{
+    margin: 0 auto;
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 0;
+    color: #fff;
+}
+.animated-txt {
+    height: 100vh;
+    color: blanchedalmond;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 3;
+
+}
+.animated-txt span{
+    position: relative;
+}
+
+.animated-txt span::before{
+    content: "";
+    color: rgb(255, 0, 119);
+    animation: palavras 10s infinite;
+}
+
+.animated-txt span::after{
+    content: "";
+    position: absolute;
+    height: 100%;
+    border-left: 2px solid rgb(255, 0, 119);
+    right: -10px;
+
+    animation: cursor .5s infinite, digita 20s steps(20) infinite;
+    width:calc(100% + 10px);
+    background-color: black;
+}
+
+@keyframes digita {
+    10%,15%,30%,35%,50%,55%,70%,75%,90%,95%{
+        width: 0;
+    }
+    5%,20%,25%,40%,45%,60%,65%,80%,85%{
+        width:calc(100% + 10px);;
+    }
+}
+
+@keyframes cursor {
+    0%{
+        border-left: 2px solid rgba(255, 0, 0, 0);
+    }   
+}
+
+@keyframes palavras {
+    0%,100%{
+        content: "_das_mulheres.dart";
+
+    }
+}
+
+@keyframes fall {
+    0% {
+        transform: translateY(-100vh);
+        color: rgb(255, 0, 55); /* Cor inicial */
+    }
+    50% {
+        transform: translateY(80vh);
+        color: transparent; /* Cor final */
+    }
+}
