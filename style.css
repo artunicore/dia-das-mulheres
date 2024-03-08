@@ -126,6 +126,7 @@ h1{
     }
 }
 
+
 @media only screen and (max-width: 600px) {
     body {
         font-size: 14px; 
@@ -138,5 +139,21 @@ h1{
     #coracao-btn {
         font-size: 100px;
         margin: 0 auto; 
+    }
+    .cascade-digit {
+        position: absolute;
+        top: -30px;
+        left: calc(50% - 50px);
+        animation: fall 1s linear infinite;
+    }
+    @keyframes fall {
+        0% {
+            transform: translateY(-100vh);
+            color: rgb(255, 0, 55); /* Cor inicial */
+        }
+        50% {
+            transform: translateY(80vh);
+            color: transparent; /* Cor final */
+        }
     }
 }
